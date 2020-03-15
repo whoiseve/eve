@@ -25,12 +25,12 @@
     invertY: true,
     limitX: false,
     limitY: false,
-    scalarX: 9.0,
-    scalarY: 9.0,
+    scalarX: 5.0,
+    scalarY: 95.0,
     frictionX: 0.1,
     frictionY: 0.1,
-    originX: 0.2,
-    originY: 0.2,
+    originX: 0.1,
+    originY: 0.1,
     pointerEvents: true,
     precision: 1
   };
