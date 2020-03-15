@@ -32,7 +32,7 @@
     originX: 0.3,
     originY: 0.3,
     pointerEvents: true,
-    precision: 1
+    precision: 4
   };
 
   function Parallax(element, options) {
