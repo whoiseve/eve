@@ -12,11 +12,11 @@
 
   // Constants
   var NAME = 'Parallax';
-  var MAGIC_NUMBER = 100;
+  var MAGIC_NUMBER = .5;
   var DEFAULTS = {
     relativeInput: false,
     clipRelativeInput: false,
-    calibrationThreshold: 500,
+    calibrationThreshold: 0.5,
     calibrationDelay: 50,
     supportDelay: 50,
     calibrateX: true,
