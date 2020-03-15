@@ -1,24 +1,63 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<title>Parallax.js</title>
-	<link rel="stylesheet" href="style.css">
-<script src="parallax.js"></script>
-</head>
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bgimg {
+  background-image: url('https://www.beautycolorcode.com/2d2d2d-2880x1800.png');
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  color: white;
+  font-family: "Adam", Courier, monospace;
+  font-size: 25px;
+}
+
+.topleft {
+  position: absolute;
+  top: 0;
+  left: 16px;
+}
+
+.bottomleft {
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+}
+
+.middle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+hr {
+  margin: auto;
+  width: 40%;
+}
+</style>
 <body>
-	<div class="container">
-		<ul id="scene">
-			<li class="layer" data-depth=".1"><img src="text.png"></li>
-			<li class="layer" data-depth="1"><img src="planet1.png"></li>
-			<li class="layer" data-depth="-1"><img src="planet2.png"></li>
-			<li class="layer" data-depth="2"><img src="astronaut.png"></li>
-			<li class="layer" data-depth="0.5"><img src="rocket.png"></li>
-		</ul>
-	</div>
-	<script>
-		var scene = document.getElementById('scene');
-		var parallax = new Parallax(scene);
-	</script>
+
+<div class="bgimg">
+  <div class="topleft">
+    <p></p>
+  </div>
+  <div class="middle">
+    <h1>EVE</h1>
+    <hr>
+    <p> /ˌsiNGɡyəˈlerədē/ </p>
+</p> a hypothetical moment in time when artificial intelligence and other technologies have become so advanced that humanity undergoes a dramatic and irreversible change.</p>
+  </div>
+  <div class="bottomleft">
+    <p>@whoiseve</p>
+  </div>
+</div>
+
 </body>
 </html>
