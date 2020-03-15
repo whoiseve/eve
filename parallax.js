@@ -29,8 +29,8 @@
     scalarY: 10.0,
     frictionX: 0.1,
     frictionY: 0.1,
-    originX: 0.5,
-    originY: 0.5,
+    originX: 0.3,
+    originY: 0.3,
     pointerEvents: true,
     precision: 1
   };
