@@ -27,10 +27,10 @@
     limitY: false,
     scalarX: 1.0,
     scalarY: 1.0,
-    frictionX: 0.1,
-    frictionY: 0.1,
-    originX: 0.1,
-    originY: 0.1,
+    frictionX: 1,
+    frictionY: 1,
+    originX: 0.3,
+    originY: 0.3,
     pointerEvents: true,
     precision: 1
   };
