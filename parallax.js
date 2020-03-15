@@ -25,14 +25,14 @@
     invertY: true,
     limitX: false,
     limitY: false,
-    scalarX: 0.01,
-    scalarY: 0.01,
-    frictionX: 0.1,
-    frictionY: 0.1,
+    scalarX: 0.001,
+    scalarY: 0.001,
+    frictionX: 0.01,
+    frictionY: 0.01,
     originX: 0.3,
     originY: 0.3,
     pointerEvents: true,
-    precision: 1
+    precision: 0.1
   };
 
   function Parallax(element, options) {
