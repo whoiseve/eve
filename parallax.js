@@ -12,19 +12,19 @@
 
   // Constants
   var NAME = 'Parallax';
-  var MAGIC_NUMBER = .5;
+  var MAGIC_NUMBER = 0.5;
   var DEFAULTS = {
     relativeInput: false,
     clipRelativeInput: false,
     calibrationThreshold: 0.5,
-    calibrationDelay: 50,
-    supportDelay: 50,
+    calibrationDelay: 5.0,
+    supportDelay: 5.0,
     calibrateX: true,
-    calibrateY: true,
+    calibrateY: false,
     invertX: true,
     invertY: true,
-    limitX: true,
-    limitY: true,
+    limitX: false,
+    limitY: false,
     scalarX: 0.01,
     scalarY: 0.01,
     frictionX: 0.1,
