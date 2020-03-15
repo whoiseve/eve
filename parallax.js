@@ -19,20 +19,20 @@
     calibrationThreshold: 500,
     calibrationDelay: 50,
     supportDelay: 50,
-    calibrateX: false,
-    calibrateY: false,
+    calibrateX: true,
+    calibrateY: true,
     invertX: true,
     invertY: true,
     limitX: true,
     limitY: true,
-    scalarX: 1.0,
-    scalarY: 1.0,
-    frictionX: 1,
-    frictionY: 1,
+    scalarX: 0.01,
+    scalarY: 0.01,
+    frictionX: 0.1,
+    frictionY: 0.1,
     originX: 0.3,
     originY: 0.3,
     pointerEvents: true,
-    precision: 4
+    precision: 1
   };
 
   function Parallax(element, options) {
