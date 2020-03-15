@@ -1,0 +1,116 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: hsl(0, 2%, 9%);
+    font-family: 'Inter', sans-serif;
+    background-image: url('./jesus.png');
+    background-position-y: 0px;
+    overflow: hidden;
+    animation: eye-fuckery 0.09s infinite linear;
+    box-shadow: 0 0 600px 50px rgba(0,0,0,0.5) inset;
+}
+
+@keyframes eye-fuckery {
+    0% {
+        background-position-x: 0px;
+        background-position-y: 0px;
+    }
+    100% {
+        background-position-x: 1px;
+        background-position-y: 3px;
+    }
+}
+
+a, p, h1, h2, h3, h4, h5, h6 {
+    text-decoration: none;
+    color: hsl(0, 0%, 96%);
+    padding: 0;
+    margin: 0;
+}
+
+.column {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+}
+
+.header,
+.footer {
+    z-index: 1;
+    height: 3rem;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    position: fixed;
+    right: 0;
+    left: 0;
+}
+.header {
+    top: 0;
+    user-select: none;
+    -webkit-user-select: none;    
+}
+.footer {
+    bottom: 0;
+}
+
+.content {
+    text-align: center;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background-image: url('./ass.png');
+    background-position: center;
+    animation: fuck 15s infinite;
+    user-select: none;
+    -webkit-user-select: none;
+    font-size: 2rem;
+    
+}
+.content .column {
+    transform: skewX(0deg);
+    animation: test 7s infinite;
+}
+.content .row {
+    transform: skewX(0deg);
+    animation: test 10s infinite;
+}
+
+.fade {
+    color: rgba(255,255,255,0.6);
+}
+
+@keyframes test {
+    0% {
+        transform: skewX(0deg);
+    }
+    0.2% {
+        transform: skewX(94deg);
+    }
+    0.6% {
+        transform: skewX(0deg);
+    }
+    100% {
+        transform: skewX(0deg);
+    }
+}
+
+@keyframes fuck {
+    0% {
+        transform: skewX(0deg);
+        background-image: url('./ass.png');
+    }
+    0.2% {
+        transform: skewX(94deg);
+        background-image: url('./gleetch.jpg');
+    }
+    0.6% {
+        transform: skewX(0deg);
+        background-image: url('./ass.png');
+    }
+    100% {
+        transform: skewX(0deg);
+        background-image: url('./ass.png');
+    }
+}
