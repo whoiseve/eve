@@ -16,7 +16,7 @@
   var DEFAULTS = {
     relativeInput: false,
     clipRelativeInput: false,
-    calibrationThreshold: 100,
+    calibrationThreshold: 50,
     calibrationDelay: 500,
     supportDelay: 500,
     calibrateX: false,
