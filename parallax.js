@@ -1,10 +1,4 @@
-/**
- * Parallax.js
- * @author Matthew Wagerfield - @wagerfield
- * @description Creates a parallax effect between an array of layers,
- *              driving the motion from the gyroscope output of a smartdevice.
- *              If no gyroscope is available, the cursor position is used.
- */
+
 ;(function(window, document, undefined) {
 
   // Strict Mode
@@ -12,7 +6,7 @@
 
   // Constants
   var NAME = 'Parallax';
-  var MAGIC_NUMBER = 0.5;
+  var MAGIC_NUMBER = 5;
   var DEFAULTS = {
     relativeInput: false,
     clipRelativeInput: false,
