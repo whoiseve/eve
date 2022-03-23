@@ -1,0 +1,75 @@
+<html>
+<head>
+    <style>
+        #one {
+            position: relative;
+            background-color: #bbb;
+            border-radius: 100% 0;
+            transform: rotate(45deg);
+            width: 50px;
+            height: 50px;
+            overflow: hidden;
+        }
+        #reset {
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            transform: rotate(-45deg);
+        }
+        #two {
+            position: absolute;
+            border-radius: 50%;
+            background-color: #000;
+            opacity: 0.5;
+            width: 15px;
+            height: 15px;
+        }
+        #three {
+            position: absolute;
+            border-radius: 50%;
+            background-color: #000;
+            opacity: 0.2;
+            width: 24px;
+            height: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div id="one">
+        <div id="reset">
+            <div id="two"></div>
+            <div id="three"></div>
+        </div>
+    </div>
+    <script>
+        var container = document.getElementById('one');
+        var containerW = container.offsetWidth;
+        var containerH = container.offsetHeight;
+        
+        var inside = document.getElementById('two');
+        var insideW = inside.offsetWidth;
+        var insideH = inside.offsetHeight;
+        
+        var insideAgain = document.getElementById('three');
+        var insideAgainW = insideAgain.offsetWidth;
+        var insideAgainH = insideAgain.offsetHeight;
+        
+        window.addEventListener('mousemove', function(event) {
+            mousePosition(event);
+        });
+        
+        function mousePosition(event) {
+            var scaleX = window.innerWidth / (containerW - insideW);
+            var scaleY = window.innerHeight / (containerH - insideH);
+            
+            inside.style.left = event.pageX / scaleX / 2 + (containerW/4) - (insideW/4);
+            inside.style.top = event.pageY / scaleY / 2 + (containerH/4) - (insideH/4);
+            
+            var scaleAgainX = window.innerWidth / (containerW - insideAgainW);
+            var scaleAgainY = window.innerHeight / (containerH - insideAgainH);
+            
+            insideAgain.style.left = event.pageX / scaleAgainX / 2 + (containerW/4) - (insideAgainW/4);
+            insideAgain.style.top = event.pageY / scaleAgainY / 2 + (containerH/4) - (insideAgainH/4);
+        }
+    </script>
+</body>
+</html>

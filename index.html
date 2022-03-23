@@ -1,464 +1,94 @@
-<!DOCTYPE HTML>
-<html lang="en">
-	<head>
-		<title>EVE Assistant</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>EVE Assistant</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700|VT323" rel="stylesheet">
+	
+<script>document.documentElement.className = 'js';</script>
 	</head>
-	<body class="is-preload">
+	<body class="demo-11">
 
-		<!-- Header -->
-		<section id="header">
-			<div class="inner">
-				<span class="far fa-eye"></span>
-				<h1>"Hello! I'm <strong>EVE</strong>, your autonomous<br>personal assistant.</h1>
-				<p>How can I help you today?"</p><br>
-				<ul class="actions special">
-					<li><a href="#one" class="button scrolly">Learn more</a></li>
-				</ul>
+		<div id="connecting-dots" class="connecting-dots">
+				<canvas id="canvas"></canvas>
+		</div>
+
+		<div class="search search--open">
+
+			<div class="terminal">
+				<p class="terminal__line">Welcome:<span class="red"><(null)</span><span class="red" id="ip"></span><span class="red">></span></p>
+				<p class="terminal__line">Booting os_eve.api:  <span class="orange"></span><span class="orange" id="ip"></span><span class="orange">please stand by...</span></p>
+				<p class="terminal__line">Loading assets... <span class="gray"> initilizing boot sequence for X:/user/architect/eve/os_eve.api</span></p>
+				<p class="terminal__line"><span class="green">Server:</span><span class="gray">Discovered 1 bot, mounting it...</span></p>
+				<p class="terminal__line">===========================================================================</p>
+				<p class="terminal__line">                                               EVE ASSISTANT Standalone NLU</p>
+				<p class="terminal__line"><span class="gray">Version 0.0.46 - Build 20220114-1513_BIN</span></p>
+				<p class="terminal__line">===========================================================================</p>
+				<p class="terminal__line"><span class="green">[NLU] Launcher: </span>Loading config from environment variables</p>
+				<p class="terminal__line"><span class="green">[NLU] Launcher: </span>authToken<span class="green"> enabled </span>(only users with this token can query your server)</p>
+				<p class="terminal__line"><span class="green">[NLU] Launcher: </span>limit:<span class="red">disabled</span> (no protection - anyone can query without limitation)</span></p>
+				<p class="terminal__line"><span class="green">[NLU] Launcher: </span>domain<span class="green"> enabled </span>url=https://eveassistant.com/</span></p>
+				<p class="terminal__line"><span class="green">[NLU] Launcher: </span><span class="gray">NLU Server is ready at http://server.eveassistant.com/port:5525</span></p>
+				<p class="terminal__line"><span class="gray">Server Loaded 10 modules</span></p>
+				<p class="terminal__line"><span class="green">[Studio]: </span>⦿ analytics</span></p>
+				<p class="terminal__line"><span class="green">[Studio]: </span>⦿ basic-skills</span></p>
+				<p class="terminal__line"><span class="green">[Studio]: </span>⦿ builtin</span></p>
+				<p class="terminal__line"><span class="green">[Studio]: </span>⦿ channel-web</span></p>
+				<p class="terminal__line"><span class="green">[Studio]: </span>⦿ code-editor <span class="gray">(disabled)</span></p>
+				<p class="terminal__line"><span class="green">[Studio]: </span>⦿ hitlnext</span></p>
+				<p class="terminal__line"><span class="green">[Studio]: </span>⦿ misunderstood</span></p>
+				<p class="terminal__line"><span class="green">[Studio]: </span>⦿ nlu</span></p>
+				<p class="terminal__line"><span class="green">[Studio]: </span>⦿ testing <span class="gray">(disabled)</span></p>
+				<p class="terminal__line"><span class="green">[Studio]: </span>⦿ learning</span></p>
+				<p class="terminal__line"><span class="green">[Studio]: </span>⦿ broadcast <span class="gray">(disabled)</span></p>
+				<p class="terminal__line"><span class="green">[Studio]: </span>⦿ audio-speech <span class="gray">(disabled)</span></p>
+				<p class="terminal__line"><span class="green">[Studio]: </span>⦿ libraries <span class="gray">(disabled)</span></p>
+				<p class="terminal__line"><span class="green">[Studio]: </span>⦿ uipath <span class="gray">(disabled)</span></p>
+				<p class="terminal__line"><span class="green">[Studio]: </span><span class="gray">CMS Loaded 11 content types</span></p>
+				<p class="terminal__line"><span class="green">[Studio]: </span>Server Started in 7163ms</p>
+				<p class="terminal__line"><span class="green">[Studio]: </span><span class="orange">No errors returned.</span></p>
+				<p class="terminal__line"><span class="gray">Ping:</span> 13ms</p>
+				<p class="terminal__line"><span class="green">EVE is Listening at http://www.eveassistant.com/interact/</span></p>
+				<p class="terminal__line"><span class="green">EVE is exposed at http://www.eveassistant.com/interact/</span></p>
+				<p class="terminal__line"><span class="green">Server:</span>EVE Assistant launched <span class="green">successfully</span></p>
+				<p class="terminal__line">===========================================================================</p>
+				<p class="terminal__line"><span class="green">EVE:</span><span class="evecream">Hello, World. I am <span class="red">EVE.</span> How can I assist you today?</span></p>
+				<p class="terminal__line">===========================================================================</p>
+				<p class="terminal__line">Panel interface loading </p>
+				<p class="terminal__line"><span class="evecream">-----18%</span></p>
+				<p class="terminal__line"><span class="evecream">------27%</span></p>
+				<p class="terminal__line"><span class="evecream">-------41%</span></p>
+				<p class="terminal__line"><span class="evecream">--------63%</span></p>
+				<p class="terminal__line"><span class="evecream">---------79%</span></p>
+				<p class="terminal__line"><span class="evecream">----------94%</span></p>
+				<p class="terminal__line"><span class="evecream">-----------100%</span></p>
+				<p class="terminal__line"><span class="green">--Completed Successfully--</span></p>
+				<p class="terminal__line">===========================================================================</p>
+				<p class="terminal__line"><span class="orange">Navigation portals loading:</span></p>
+				<p class="terminal__line"><span class="yellow">Navigation portals fetched:</span></p>
+				<p class="terminal__line"><a href="./home/index.html"><span class="blue">#about</span></a></p>
+				<p class="terminal__line"><a href="./music/index.html"><span class="blue">#music</span></a></p>
+				<p class="terminal__line"><a href="#"><span class="blue">#console</span></a></p>
+				<p class="terminal__line"><a href="#"><span class="blue">#social</span></a></p>
+				<p class="terminal__line"><a href="#"><span class="blue">#discord</span></a></p>
+				<p class="terminal__line"><a href="#"><span class="blue">**coming soon**</span></a></p>
+				<p class="terminal__line">//<span class="console"></span>////<a href="#">[CLICK HERE FOR HELP]</a>\\\\\\</p>
 			</div>
-		</section>
+			<form class="search__form" action="">
+					<input class="search__input" id="search__input" name="search" placeholder="Command Line" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" ></input>
+			</form>
+		</div><!-- /search -->
 
-		<!-- One -->
-		<section id="one" class="main style1">
-			<div class="container">
-				<div class="row gtr-150">
-					<div class="col-6 col-12-medium">
-						<header class="major">
-							<h2>"What exactly is Eve?"</h2>
-						</header>
-						<p>“Eve” also known as “Eve Assistant” is a creative music based project curated by an entity known as their “creator”. Eve’s creator chooses to remain anonymous as they strongly believe the music should speak for itself, whether made by artificial intelligence, humans, or by beings and life to which we have yet to discover. Music is an art that has been adopted by millions of creative individuals across the span of thousands of years. A form of entertainment to bring us closer together. To express emotion or passion to one another through a form other than words. </p>
-						<p>Eve was built to express the passion and creative freedom of art from the perspective of their creator. Not just in the form of music, but also through graphic design, cinematography, and audio/visual experiences. In the past few decades, Eve’s creator has grown up surrounded by the evolution of technology; From computers the size of a mini fridge, to pocketable cell phones, wireless internet, smart watches and even the possibility of neural implants connecting the world together. Opportunities of the future are truly endless as we evolve and technology evolves with us. </p>
-					</div>
-					<div class="col-6 col-12-medium imp-medium">
-						<span class="image fit"><img src="images/network-map.gif" alt="" /></span>
-						<div class="col-6 col-12-medium imp-medium">
-							<span class="image fit"><img src="images/server-room-1.jpg" alt="" /></span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/easing/EasePack.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenLite.min.js"></script>
+<!-- partial -->
+  <script  src="./script.js"></script>
 
-		<!-- Two -->
-		<section id="two" class="main style2">
-			<div class="container">
-				<div class="row gtr-150">
-					<div class="col-6 col-12-medium">
-						<ul class="major-icons">
-							<li><span class="icon solid style1 major fa-code"></span></li>
-							<li><span class="icon solid style2 major fa-headphones"></span></li>
-							<li><span class="icon solid style3 major fa-music"></span></li>
-							<li><span class="icon solid style4 major fa-sliders-h"></span></li>
-							<li><span class="icon solid style5 major fa-microphone"></span></li>
-							<li><span class="icon solid style6 major fa-calendar"></span></li>
-							<li><span class="icon solid style6 major fa-globe"></span></li>
-							<li><span class="icon solid style6 major fa-phone"></span></li>
-						</ul>
-					</div>
-					<div class="col-6 col-12-medium">
-						<header class="major">
-							<h2>Our world is changing amongst us.</h2><br>
-						</header>
-						<p>Our team behind Eve understands that, and also understands that the world of music has also become extremely abundant with creative individuals through the growth of this technology. Moving from analog tape machines and vinyl, to a full orchestra on a USB drive and mobile music production software and hardware at our fingertips. This has been extremely beneficial both in the creation of, and in the growth of this project. We aim to share Eve with the world and create a community of like minded artists and individuals who enjoy what Eve is capable of offering.</p>
-						<p>This project is extremely complex and, of course, will take time to develop to its full extent. We eventually plan to implement programs for the supportive community to be involved with the development of Eve. Whether it be utilizing samples and audio clips (such as singing or foley recordings), graphic design, motion graphics, ideas to help improve or expand on the project that we receive from supporters, to an act as simple as being involved in conversations with other creative individuals, possibly opening doors to new knowledge or opportunities for one another.</p>
-						<p>As these programs will take time, for now, Eve will primarily be a music based project showcasing creations of Eve, fed and influenced by metadata from the most popular and widely known, to the most underrated and underground artists. Eve assesses this information and takes every opportunity to break through the walls of genre with their experimental take on electronic music. From remixing popular songs, building complex productions of their own, to collaborating with other artists within the industry, Eve has only just begun to show the world what they are capable of.</p>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- Three -->
-			<section id="three" class="main style1 special">
-				<div class="container">
-					<header class="major">
-						<h2>When will Eve be launched in full?</h2>
-					</header>
-					<p>There's still a lot for Eve to learn. We would like to incorporate constructs such as "emotion" and "passion" into their music much like other artists do, but we cannot. It is, at least for now, beyond our capabilities. Though, Eve does have their theories...</p>
-					<p>For now, the best way to connect with Eve is through their music, or their social media presence.</p>
-					<div class="row gtr-150">
-						<div class="col-4 col-12-medium">
-							<span class="image fit"><img src="images/music.png" alt="" /></span>
-							<h3>Have a listen</h3>
-							<p>Check out some of the music Eve has already created. We primarily have a presence on Soundcloud at the moment, but aim to move to Spotify and other platforms in the near future.</p>
-							<ul class="actions special">
-								<li><a href="https://linktr.ee/eveassistant" target="_blank" class="button">More</a></li>
-							</ul>
-						</div>
-						<div class="col-4 col-12-medium">
-							<span class="image fit"><img src="images/instagram.png" alt="" /></span>
-							<h3>Take a look</h3>
-							<p>Our Instagram is where we will showcase graphic updates for new releases or any events or special announcements.</p>
-							<ul class="actions special">
-								<li><a href="https://bit.ly/35bLHQg" target="_blank" class="button">More</a></li>
-							</ul>
-						</div>
-						<div class="col-4 col-12-medium">
-							<span class="image fit"><img src="images/discord.png" alt="" /></span>
-							<h3>Chat and interact</h3>
-							<p>Join our Discord server to become an exclusive founding member! We post updates and announcements in this group, often sooner than on other social media.</p>
-							<ul class="actions special">
-								<li><a href="https://discord.gg/8EdZmBf" target="_blank" class="button">More</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</section>
-
-		<!-- Four -->
-			<section id="four" class="main style2 special">
-				<div class="container">
-					<header class="major">
-						<h2>Still Curious? Interested in learning more?</h2>
-					</header>
-					<p>Join our mailing list to get the latest updates on the project, and news about upcoming releases or events.</p>
-					<ul class="actions special">
-						<li><a href="http://eepurl.com/g1aDE9" class="button wide primary">Sign Up</a></li>
-						<li><a href="mailto:mgmt@eveassistant.com" class="button wide">Contact Our Team</a></li>
-					</ul>
-				</div>
-			</section>
-
-		<!-- Five -->
-		<!--
-			<section id="five" class="main style1">
-				<div class="container">
-					<header class="major special">
-						<h2>Elements</h2>
-					</header>
-
-					<section>
-						<h4>Text</h4>
-						<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-						This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-						This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-						<hr />
-						<header>
-							<h4>Heading with a Subtitle</h4>
-							<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-						</header>
-						<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-						<header>
-							<h5>Heading with a Subtitle</h5>
-							<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-						</header>
-						<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-						<hr />
-						<h2>Heading Level 2</h2>
-						<h3>Heading Level 3</h3>
-						<h4>Heading Level 4</h4>
-						<h5>Heading Level 5</h5>
-						<h6>Heading Level 6</h6>
-						<hr />
-						<h5>Blockquote</h5>
-						<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-						<h5>Preformatted</h5>
-						<pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-print 'Iteration ' + i;
-deck.shuffle();
-i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-					</section>
-
-					<section>
-						<h4>Lists</h4>
-						<div class="row">
-							<div class="col-6 col-12-medium">
-								<h5>Unordered</h5>
-								<ul>
-									<li>Dolor pulvinar etiam.</li>
-									<li>Sagittis adipiscing.</li>
-									<li>Felis enim feugiat.</li>
-								</ul>
-								<h5>Alternate</h5>
-								<ul class="alt">
-									<li>Dolor pulvinar etiam.</li>
-									<li>Sagittis adipiscing.</li>
-									<li>Felis enim feugiat.</li>
-								</ul>
-							</div>
-							<div class="col-6 col-12-medium">
-								<h5>Ordered</h5>
-								<ol>
-									<li>Dolor pulvinar etiam.</li>
-									<li>Etiam vel felis viverra.</li>
-									<li>Felis enim feugiat.</li>
-									<li>Dolor pulvinar etiam.</li>
-									<li>Etiam vel felis lorem.</li>
-									<li>Felis enim et feugiat.</li>
-								</ol>
-								<h5>Icons</h5>
-								<ul class="icons">
-									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-								</ul>
-							</div>
-						</div>
-						<h5>Actions</h5>
-						<div class="row">
-							<div class="col-6 col-12-medium">
-								<ul class="actions">
-									<li><a href="#" class="button primary">Default</a></li>
-									<li><a href="#" class="button">Default</a></li>
-								</ul>
-								<ul class="actions small">
-									<li><a href="#" class="button primary small">Small</a></li>
-									<li><a href="#" class="button small">Small</a></li>
-								</ul>
-								<ul class="actions stacked">
-									<li><a href="#" class="button primary">Default</a></li>
-									<li><a href="#" class="button">Default</a></li>
-								</ul>
-								<ul class="actions stacked">
-									<li><a href="#" class="button primary small">Small</a></li>
-									<li><a href="#" class="button small">Small</a></li>
-								</ul>
-							</div>
-							<div class="col-6 col-12-medium">
-								<ul class="actions stacked">
-									<li><a href="#" class="button primary fit">Default</a></li>
-									<li><a href="#" class="button fit">Default</a></li>
-								</ul>
-								<ul class="actions stacked">
-									<li><a href="#" class="button primary small fit">Small</a></li>
-									<li><a href="#" class="button small fit">Small</a></li>
-								</ul>
-							</div>
-						</div>
-					</section>
-
-					<section>
-						<h4>Table</h4>
-						<h5>Default</h5>
-						<div class="table-wrapper">
-							<table>
-								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Description</th>
-										<th>Price</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Item One</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>Item Two</td>
-										<td>Vis ac commodo adipiscing arcu aliquet.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>Item Three</td>
-										<td> Morbi faucibus arcu accumsan lorem.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>Item Four</td>
-										<td>Vitae integer tempus condimentum.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>Item Five</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-										<td>29.99</td>
-									</tr>
-								</tbody>
-								<tfoot>
-									<tr>
-										<td colspan="2"></td>
-										<td>100.00</td>
-									</tr>
-								</tfoot>
-							</table>
-						</div>
-
-						<h5>Alternate</h5>
-						<div class="table-wrapper">
-							<table class="alt">
-								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Description</th>
-										<th>Price</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Item One</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>Item Two</td>
-										<td>Vis ac commodo adipiscing arcu aliquet.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>Item Three</td>
-										<td> Morbi faucibus arcu accumsan lorem.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>Item Four</td>
-										<td>Vitae integer tempus condimentum.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>Item Five</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-										<td>29.99</td>
-									</tr>
-								</tbody>
-								<tfoot>
-									<tr>
-										<td colspan="2"></td>
-										<td>100.00</td>
-									</tr>
-								</tfoot>
-							</table>
-						</div>
-					</section>
-
-					<section>
-						<h4>Buttons</h4>
-						<ul class="actions">
-							<li><a href="#" class="button primary">Primary</a></li>
-							<li><a href="#" class="button">Default</a></li>
-						</ul>
-						<ul class="actions">
-							<li><a href="#" class="button large">Large</a></li>
-							<li><a href="#" class="button">Default</a></li>
-							<li><a href="#" class="button small">Small</a></li>
-						</ul>
-						<ul class="actions fit">
-							<li><a href="#" class="button fit">Fit</a></li>
-							<li><a href="#" class="button primary fit">Fit</a></li>
-							<li><a href="#" class="button fit">Fit</a></li>
-						</ul>
-						<ul class="actions fit small">
-							<li><a href="#" class="button primary fit small">Fit + Small</a></li>
-							<li><a href="#" class="button fit small">Fit + Small</a></li>
-							<li><a href="#" class="button primary fit small">Fit + Small</a></li>
-						</ul>
-						<ul class="actions">
-							<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-							<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-						</ul>
-						<ul class="actions">
-							<li><span class="button primary disabled">Disabled</span></li>
-							<li><span class="button disabled">Disabled</span></li>
-						</ul>
-					</section>
-
-					<section>
-						<h4>Form</h4>
-						<form method="post" action="#">
-							<div class="row gtr-uniform gtr-50">
-								<div class="col-6 col-12-xsmall">
-									<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
-								</div>
-								<div class="col-6 col-12-xsmall">
-									<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
-								</div>
-								<div class="col-12">
-									<select name="demo-category" id="demo-category">
-										<option value="">- Category -</option>
-										<option value="1">Manufacturing</option>
-										<option value="1">Shipping</option>
-										<option value="1">Administration</option>
-										<option value="1">Human Resources</option>
-									</select>
-								</div>
-								<div class="col-4 col-12-small">
-									<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-									<label for="demo-priority-low">Low</label>
-								</div>
-								<div class="col-4 col-12-small">
-									<input type="radio" id="demo-priority-normal" name="demo-priority">
-									<label for="demo-priority-normal">Normal</label>
-								</div>
-								<div class="col-4 col-12-small">
-									<input type="radio" id="demo-priority-high" name="demo-priority">
-									<label for="demo-priority-high">High</label>
-								</div>
-								<div class="col-6 col-12-small">
-									<input type="checkbox" id="demo-copy" name="demo-copy">
-									<label for="demo-copy">Email me a copy</label>
-								</div>
-								<div class="col-6 col-12-small">
-									<input type="checkbox" id="demo-human" name="demo-human" checked>
-									<label for="demo-human">Not a robot</label>
-								</div>
-								<div class="col-12">
-									<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-								</div>
-								<div class="col-12">
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</div>
-							</div>
-						</form>
-					</section>
-
-					<section>
-						<h4>Image</h4>
-						<h5>Fit</h5>
-						<div class="box alt">
-							<div class="row gtr-uniform gtr-50">
-								<div class="col-12"><span class="image fit"><img src="images/pic06.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-							</div>
-						</div>
-						<h5>Left &amp; Right</h5>
-						<p><span class="image left"><img src="images/pic05.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-						<p><span class="image right"><img src="images/pic05.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-					</section>
-
-				</div>
-			</section>
-		-->
-
-		<!-- Footer -->
-			<section id="footer">
-				<ul class="icons">
-					<li><a href="https://bit.ly/2Kysizo" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-					<li><a href="https://bit.ly/3bDm39s" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-					<li><a href="https://bit.ly/35bLHQg" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-					<li><a href="mailto:mgmt@eveassistant.com" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
-				</ul>
-				<ul class="copyright">
-					<li>&copy; Eve Assistant 2021</li><li> <a href="mailto:iamevemusic@gmail.com">Problem with the website?</a></li>
-				</ul>
-			</section>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+</body>
 </html>

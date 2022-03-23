@@ -1,0 +1,1099 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Inconsolata', 'Monaco', monospace;
+	overflow: hidden;
+	margin: 0;
+	color: #a0a2ae;
+	background: #000;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.main-wrap {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	height: 100vh;
+	background-color: #000;
+
+	background-repeat: no-repeat;
+	background-position: 50% 10em;
+	background-size: 75% auto;
+}
+
+
+/* Buttons */
+
+.btn {
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+	border: none;
+	background: none;
+}
+
+.btn:focus {
+	outline: none;
+}
+
+.btn--search {
+	font-size: 1.5em;
+}
+
+.btn--hidden {
+	pointer-events: none;
+	opacity: 0;
+}
+
+
+/* Reset Search Input */
+
+.search__input {
+	border: 0;
+	background: transparent;
+	border-radius: 0;
+	-webkit-appearance: none;
+}
+
+.search__input:focus {
+	outline: none;
+}
+
+
+/* Links */
+
+a,
+.btn {
+	text-decoration: none;
+	color: #d17c78;
+	outline: none;
+}
+
+.hidden {
+	position: absolute;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+	pointer-events: none;
+}
+
+
+/* Icons */
+
+.icon {
+	display: block;
+	width: 1.5em;
+	height: 1.5em;
+	margin: 0 auto;
+	fill: currentColor;
+}
+
+
+
+
+/* Deco lines */
+
+.decolines {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	pointer-events: none;
+}
+
+.decoline {
+	position: absolute;
+	width: 1px;
+	height: 100%;
+	background: #ddd;
+}
+
+.decoline:first-child {
+	right: 88em;
+}
+
+.decoline:nth-child(2) {
+	right: 68em;
+}
+
+.decoline:nth-child(3) {
+	right: 48em;
+}
+
+.decoline:nth-child(4) {
+	right: 28em;
+}
+
+.decoline:nth-child(5) {
+	right: 8em;
+}
+
+.demo-11 { color: #fff; background-color: #000; }
+.demo-11 main { background-color: transparent; }
+.demo-11 a, .demo-11 .btn { color: #f7f7f7; }
+
+
+/* Layout for search container */
+.search {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding: 3em;
+}
+span.red{
+	color: #e04343;
+}
+span.green{
+	color: #00b336;
+}
+span.blue{
+	color: #4bccff;
+}
+span.yellow{
+	color: #f3ffaf;
+}
+span.gray{
+	color: #666666;
+}
+span.orange{
+	color: #f58b00;
+}
+span.pink{
+	color: #b334c4;
+}
+span.evegray{
+	color: #2d2d2d;
+}
+span.evecream{
+	color: #d2d2d2;
+}
+span.navy{
+	color: #322a63;
+}
+
+.js .search {
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+}
+
+.btn--search-close {
+	font-size: 2em;
+	position: absolute;
+	top: 1.25em;
+	right: 1.25em;
+	display: none;
+}
+
+.js .btn--search-close {
+	display: block;
+}
+
+.terminal__line {
+	line-height: 1.25;
+	overflow: hidden;
+	width: 0;
+	height: 0;
+	margin: 0;
+	white-space: nowrap;
+}
+
+.search__form::before {
+	content: '>';
+}
+
+.search__input {
+	font-family: inherit;
+	line-height: 1;
+	display: inline-block;
+	box-sizing: border-box;
+	padding: 0.05em 0;
+	color: #fff;
+}
+
+.search__form::before,
+.terminal__line,
+.search__input {
+	font-family: 'VT323', monospace;
+	font-size: 1.25em;
+}
+
+.search__input::-webkit-input-placeholder {
+	/* WebKit, Blink, Edge */
+	color: #4a319e;
+}
+
+.search__input::-moz-placeholder {
+	opacity: 1;
+	/* Mozilla Firefox 19+ */
+	color: #4a319e;
+}
+
+.search__input:-ms-input-placeholder {
+	/* Internet Explorer 10-11 */
+	color: #4a319e;
+}
+
+.search__input::-webkit-search-cancel-button,
+.search__input::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+.search__input::-ms-clear {
+	display: none;
+}
+
+/************************/
+/* Transitions 			*/
+/************************/
+
+.js .main-wrap {
+	transition: opacity 0.3s;
+}
+
+.js .main-wrap--hide {
+	pointer-events: none;
+	opacity: 0;
+}
+
+.js .main-wrap--move .btn--search {
+	pointer-events: none;
+	opacity: 0;
+}
+
+.js .search {
+	pointer-events: none;
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+.js .search--open {
+	pointer-events: auto;
+	opacity: 1;
+}
+.js .search--open .terminal.binding .terminal__line{
+	width: 200ch;
+}
+.js .search--open .terminal__line:first-child {
+	width: 20ch;
+}
+.js .search--open .terminal__line:nth-child(2),
+.js .search--open .terminal__line:nth-child(3) {
+	width: 200ch;
+}
+.js .search--open .terminal__line:nth-child(4) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(5) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(6) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(7) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(8) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(9) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(10) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(11) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(12) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(13) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(14) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(15) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(16) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(17) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(18) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(19) {
+	width: 100ch;
+}.js .search--open .terminal__line:nth-child(20) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(21) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(22) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(23) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(24) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(25) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(26) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(27) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(28) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(29) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(30) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(31) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(32) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(33) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(34) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(35) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(36) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(37) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(38) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(39) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(40) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(41) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(42) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(43) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(44) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(45) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(46) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(47) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(48) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(49) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(50) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(51) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(52) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(53) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(54) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(55) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(56) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(57) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(58) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(59) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(60) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(61) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(62) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(63) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(64) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(65) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(66) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(67) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(68) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(69) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(70) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(71) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(72) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(73) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(74) {
+	width: 100ch;
+}
+.js .search--open .terminal__line:nth-child(75) {
+	width: 100ch;
+}
+
+
+
+
+
+.js .search--open .terminal__line {
+	animation: typing 1s steps(30, end), scaleUp 0.1s forwards;
+}
+
+.js .search--open .terminal__line:first-child {
+	animation-timing-function: steps(20, end), ease;
+}
+
+.js .search--open .terminal__line:nth-child(2) {
+	animation-delay: 2s;
+}
+
+.js .search--open .terminal__line:nth-child(3) {
+	animation-delay: 2.5s;
+}
+
+.js .search--open .terminal__line:nth-child(2),
+.js .search--open .terminal__line:nth-child(3) {
+	animation-duration: 1.35s, 0.1s;
+	animation-timing-function: steps(27, end), ease;
+}
+
+.js .search--open .terminal__line:nth-child(4) {
+	animation-duration: 1.4s, 0.1s;
+	animation-timing-function: steps(28, end), ease;
+	animation-delay: 6.35s;
+}
+
+.js .search--open .terminal__line:nth-child(5) {
+	animation-duration: 0.2s, 0.1s;
+	animation-timing-function: steps(7, end), ease;
+	animation-delay: 7.75s;
+}
+
+.js .search--open .terminal__line:nth-child(6) {
+	animation-duration: 0.2s, 0.1s;
+	animation-timing-function: steps(16, end), ease;
+	animation-delay: 7.76s;
+}
+
+.js .search--open .terminal__line:nth-child(7) {
+	animation-duration: 0.2s, 0.1s;
+	animation-timing-function: steps(14, end), ease;
+	animation-delay: 7.77s;
+}
+
+.js .search--open .terminal__line:nth-child(8) {
+	animation-duration: 0.2s, 0.1s;
+	animation-timing-function: steps(19, end), ease;
+	animation-delay: 7.78s;
+}
+
+.js .search--open .terminal__line:nth-child(9) {
+	animation-duration: 0.5s, 0.1s;
+	animation-timing-function: steps(10, end), ease;
+	animation-delay: 8.5s;
+}
+
+.js .search--open .terminal__line:nth-child(10) {
+	animation-duration: 0.65s, 0.1s;
+	animation-timing-function: steps(13, end), ease;
+	animation-delay: 9s;
+}
+
+.js .search--open .terminal__line:nth-child(11) {
+	animation-duration: 0.6s, 0.1s;
+	animation-timing-function: steps(12, end), ease;
+	animation-delay: 11.5s;
+}
+.js .search--open .terminal__line:nth-child(12) {
+	animation-duration: 0.6s, 0.1s;
+	animation-timing-function: steps(12, end), ease;
+	animation-delay: 12.2s;
+}
+.js .search--open .terminal__line:nth-child(13) {
+	animation-duration: 3s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 13s;
+}
+.js .search--open .terminal__line:nth-child(14) {
+	animation-duration: 3s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 15s;
+}
+.js .search--open .terminal__line:nth-child(15) {
+	animation-duration: 3s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 17s;
+}
+.js .search--open .terminal__line:nth-child(16) {
+	animation-duration: 3s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 20s;
+}
+.js .search--open .terminal__line:nth-child(17) {
+	animation-duration: 3s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 21s;
+}
+.js .search--open .terminal__line:nth-child(18) {
+	animation-duration: 3s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 22s;
+}
+.js .search--open .terminal__line:nth-child(19) {
+	animation-duration: 3s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 22.5s;
+}
+.js .search--open .terminal__line:nth-child(20) {
+	animation-duration: 1s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 23s;
+}
+.js .search--open .terminal__line:nth-child(21) {
+	animation-duration: 3s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 24s;
+}
+.js .search--open .terminal__line:nth-child(22) {
+	animation-duration: 1s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 25s;
+}
+.js .search--open .terminal__line:nth-child(23) {
+	animation-duration: 3s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 26s;
+}
+.js .search--open .terminal__line:nth-child(24) {
+	animation-duration: 1s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 27s;
+}
+.js .search--open .terminal__line:nth-child(25) {
+	animation-duration: 1s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 28s;
+}
+.js .search--open .terminal__line:nth-child(26) {
+	animation-duration: 1s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 29s;
+}
+.js .search--open .terminal__line:nth-child(27) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 30s;
+}
+.js .search--open .terminal__line:nth-child(28) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 31s;
+}.js .search--open .terminal__line:nth-child(29) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 31s;
+}
+.js .search--open .terminal__line:nth-child(30) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 31s;
+}
+.js .search--open .terminal__line:nth-child(31) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 31s;
+}
+.js .search--open .terminal__line:nth-child(32) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 31.2s;
+}
+.js .search--open .terminal__line:nth-child(33) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 31.5s;
+}
+.js .search--open .terminal__line:nth-child(34) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 31.8s;
+}
+.js .search--open .terminal__line:nth-child(35) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 32s;
+}
+.js .search--open .terminal__line:nth-child(36) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 32.5s;
+}
+.js .search--open .terminal__line:nth-child(37) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 33s;
+}
+.js .search--open .terminal__line:nth-child(38) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 33.5s;
+}.js .search--open .terminal__line:nth-child(39) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 33s;
+}
+.js .search--open .terminal__line:nth-child(40) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 34.5s;
+}
+.js .search--open .terminal__line:nth-child(41) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 35s;
+}
+.js .search--open .terminal__line:nth-child(42) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 35.5s;
+}
+.js .search--open .terminal__line:nth-child(43) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 36s;
+}
+.js .search--open .terminal__line:nth-child(44) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 36.5s;
+}
+.js .search--open .terminal__line:nth-child(45) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 37s;
+}
+.js .search--open .terminal__line:nth-child(46) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 37.5s;
+}
+.js .search--open .terminal__line:nth-child(47) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 38s;
+}
+.js .search--open .terminal__line:nth-child(48) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 38.5s;
+}
+.js .search--open .terminal__line:nth-child(49) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 39;
+}
+.js .search--open .terminal__line:nth-child(50) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 40s;
+}
+.js .search--open .terminal__line:nth-child(51) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 40s;
+}
+.js .search--open .terminal__line:nth-child(52) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 40s;
+}
+.js .search--open .terminal__line:nth-child(53) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 40s;
+}
+.js .search--open .terminal__line:nth-child(54) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 40s;
+}
+.js .search--open .terminal__line:nth-child(55) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 40s;
+}
+.js .search--open .terminal__line:nth-child(56) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 40s;
+}
+.js .search--open .terminal__line:nth-child(57) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 40s;
+}
+.js .search--open .terminal__line:nth-child(58) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 40s;
+}
+.js .search--open .terminal__line:nth-child(59) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 40s;
+}
+.js .search--open .terminal__line:nth-child(60) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 40s;
+}
+.js .search--open .terminal__line:nth-child(61) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 40s;
+}
+.js .search--open .terminal__line:nth-child(62) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 40s;
+}
+.js .search--open .terminal__line:nth-child(63) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 40s;
+}
+.js .search--open .terminal__line:nth-child(64) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 40s;
+}
+.js .search--open .terminal__line:nth-child(65) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 40s;
+}
+.js .search--open .terminal__line:nth-child(66) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 40s;
+}
+.js .search--open .terminal__line:nth-child(67) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 40s;
+}
+.js .search--open .terminal__line:nth-child(68) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 40s;
+}
+.js .search--open .terminal__line:nth-child(69) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 40s;
+}
+.js .search--open .terminal__line:nth-child(70) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 40s;
+}
+.js .search--open .terminal__line:nth-child(71) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 40s;
+}
+.js .search--open .terminal__line:nth-child(72) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 40s;
+}
+.js .search--open .terminal__line:nth-child(73) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 40s;
+}
+.js .search--open .terminal__line:nth-child(74) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 40s;
+}
+.js .search--open .terminal__line:nth-child(75) {
+	animation-duration: .5s, 0.1s;
+	animation-timing-function: steps(190, end), ease;
+	animation-delay: 40s;
+}
+
+
+
+.connecting-dots {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center center;
+  position: relative;
+  margin: 0 auto;
+}
+
+canvas{
+  position: absolute;
+  z-index: 1
+}
+.home {
+    position: absolute;
+		top: 0;
+    bottom: 0;
+    left: 0;
+		right: 0;
+    background-color: #000;
+    z-index: 9999;
+		-webkit-animation: move 1s; /* Safari 4+ */
+	  	 -moz-animation: move 1s; /* Fx 5+ */
+	       -o-animation: move 1s; /* Opera 12+ */
+	  	 			animation: move 1s; /* IE 10+, Fx 29+ */
+}
+.home_container{
+		animation-delay: 1s;
+		-webkit-animation: show 1s; /* Safari 4+ */
+			 -moz-animation: show 1s; /* Fx 5+ */
+				 -o-animation: show 1s; /* Opera 12+ */
+						animation: show 1s; /* IE 10+, Fx 29+ */
+}
+.close_home {
+    padding: 1px 10px 6px 10px;
+    position: absolute;
+    top: 70px;
+    right: 80px;
+    font-size: 30px;
+    border: 1px solid;
+		cursor: pointer;
+}
+.home_container h2 {
+        position: absolute;
+    top: 35%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 3em;
+}
+.home_container p{
+        position: absolute;
+    top: 45%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 2em;
+}
+.ass {
+    position: absolute;
+		top: 0;
+    bottom: 0;
+    left: 0;
+		right: 0;
+    background-color: #000;
+    z-index: 9999;
+		-webkit-animation: move 1s; /* Safari 4+ */
+	  	 -moz-animation: move 1s; /* Fx 5+ */
+	       -o-animation: move 1s; /* Opera 12+ */
+	  	 			animation: move 1s; /* IE 10+, Fx 29+ */
+}
+.ass_container{
+		animation-delay: 1s;
+		-webkit-animation: show 1s; /* Safari 4+ */
+			 -moz-animation: show 1s; /* Fx 5+ */
+				 -o-animation: show 1s; /* Opera 12+ */
+						animation: show 1s; /* IE 10+, Fx 29+ */
+}
+.close_ass {
+    padding: 1px 10px 6px 10px;
+    position: absolute;
+    top: 70px;
+    right: 80px;
+    font-size: 30px;
+    border: 1px solid;
+		cursor: pointer;
+}
+.ass_container h2 {
+        position: absolute;
+    top: 35%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 3em;
+}
+.ass_container p{
+        position: absolute;
+    top: 45%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 2em;
+}
+@keyframes move {
+		0% {
+			right: 5000px;
+		}
+		30% {
+			right: 2000px;
+		}
+		100% {
+			right: 0;
+	}
+}
+@keyframes move {
+		0% {
+			opacity: 0;
+		}
+		30% {
+			opacity: 0.5;
+		}
+		100% {
+			opacity: 1;
+	}
+}
+
+
+/* Type animation by Lea Verou http://lea.verou.me/2012/02/simpler-css-typing-animation-with-the-ch-unit/ */
+@keyframes typing {
+	from {
+		width: 0;
+	}
+}
+
+@keyframes scaleUp {
+	from {
+		height: 0;
+	} to {
+		height: 1.5em;
+	}
+}
+
+/* Close button */
+.btn--search-close {
+	opacity: 0;
+	transition: opacity 0.5s;
+}
+
+.search--open .btn--search-close {
+	opacity: 1;
+}
+
+/* Search form with input and description */
+
+.js .search__form {
+	opacity: 0;
+}
+
+.js .search--open .search__form {
+	opacity: 1;
+	transition: opacity 0.3s 3.35s;
+}
+
+@media screen and (max-width: 40em) {
+	.btn--search-close {
+		font-size: 1.25em;
+	}
+	.search {
+		padding: 0.5em;
+	}
+}
+@media screen and (max-width: 40em) {
+	.search-wrap {
+		font-size: 0.85em;
+		position: absolute;
+		top: 2.15em;
+		right: 2em;
+	}
+	.bottom-nav {
+		padding: 0.5em;
+	}
+	.codrops-demos {
+		text-align: center;
+	}
+	.codrops-demos a {
+		margin-bottom: 1em;
+	}
+	.codrops-demos span {
+		display: block;
+		margin: 0 auto 1em;
+		text-align: center;
+	}
+}
