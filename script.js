@@ -298,9 +298,9 @@ navigationLink.click(function(e){
     createHome();
 
 	  } else if ( $( "input" ).val() === "about" ) {
-				window.open('http://eveasistant.com/',"_self");
+				window.open('http://eveassistant.com/',"_self");
       } else if ( $( "input" ).val() === "music" ) {
-				window.open('http://eveasistant.com/music',"_self");
+				window.open('http://eveassistant.com/music',"_self");
       } else if ( $( "input" ).val() === "console" ) {
 				window.open('http://eveassistant.com/interact',"_self");
       } else if ( $( "input" ).val() === "social" ) {
