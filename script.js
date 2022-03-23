@@ -298,17 +298,17 @@ navigationLink.click(function(e){
     createHome();
 
 	  } else if ( $( "input" ).val() === "about" ) {
-				window.open('http://eveassistant.com/home',"_self");
+				window.open('http://www.eveassistant.com/home',"_self");
       } else if ( $( "input" ).val() === "music" ) {
-				window.open('http://eveassistant.com/music',"_self");
+				window.open('http://www.eveassistant.com/music',"_self");
       } else if ( $( "input" ).val() === "console" ) {
-				window.open('http://eveassistant.com/interact',"_self");
+				window.open('http://www.eveassistant.com/interact',"_self");
       } else if ( $( "input" ).val() === "social" ) {
-				window.open('http://jemi.app/iameve',"_self");
+				window.open('http://www.jemi.app/iameve',"_self");
       } else if ( $( "input" ).val() === "discord" ) {
 				window.open('https://discord.gg/87cwQATfDK',"_self");
       } else if ( $( "input" ).val() === "admin" ) {
-				window.open('http://eveassistant.com/admin',"_self");
+				window.open('http://www.eveassistant.com/admin',"_self");
 
         var binder = $('input').val();
         var terminal_div = document.getElementsByClassName('terminal');
