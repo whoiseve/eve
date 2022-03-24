@@ -298,15 +298,15 @@ navigationLink.click(function(e){
     createHome();
 
 	  } else if ( $( "input" ).val() === "about" ) {
-				window.open('./home/index.html',"_self");
+				window.open('http://eveassistant.com/home',"_self");
       } else if ( $( "input" ).val() === "music" ) {
-				window.open('./music/index.html',"_self");
+				window.open('http://eveassistant.com/music',"_self");
       } else if ( $( "input" ).val() === "console" ) {
 				window.open('http://www.eveassistant.com/interact',"_self");
       } else if ( $( "input" ).val() === "social" ) {
 				window.open('http://www.jemi.app/iameve',"_self");
       } else if ( $( "input" ).val() === "discord" ) {
-				window.open('https://discord.gg/87cwQATfDK',"_self");
+				window.open('https://discord.gg/Y5p7cfvYTs',"_self");
       } else if ( $( "input" ).val() === "admin" ) {
 				window.open('http://www.eveassistant.com/admin',"_self");
 
