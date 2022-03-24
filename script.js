@@ -283,16 +283,18 @@ var sequence1 = new KeySequence(
   [38, 38, 40, 40, 37, 39,37 ,39, 66, 65],
   function () { 
     // DO THINGSSSSSS
-    alert('hello, world.');
+    alert('congradulations. you understood the assignment. you will now be taken to an exclusive area.');
+    window.open('http://eveassistant.com/vip');
   }
 );
 
   // example sequences
   var sequence2 = new KeySequence(
-    [67, 79, 67, 75],
+    [69, 86, 69, 65, 83, 83, 73, 83, 84, 65, 78, 84],
     function () { 
       // DO THINGSSSSSS
-      alert('Hey..... NICE COCKhhhhh');
+      alert('you are being redirected to the administrator panel');
+      window.open('http://eveassistant.com/admin',"_self");
     }
   );
 
@@ -367,9 +369,9 @@ new KeySequenceHandler([sequence1,sequence2]);
     });
   }
 
-  function createAss() {
+  function createAdmin() {
     var homeDiv = document.createElement('div');
-    homeDiv.innerHTML = '<div class="home_container"><h2>ASSSSSSSSS:</h2><p>Please try inputting a command, and pressing "enter". <br/> You can see the list of commands under "Navigation Portals".</p><div class="close_home" href="">x</div></div>';
+    homeDiv.innerHTML = '<div class="home_container"><h2>If you are an administrator, </h2><p>please navigate to and login to the console.</p><div class="close_home" href="">x</div></div>';
     homeDiv.setAttribute('class', 'home');
     document.body.appendChild(homeDiv);
 
@@ -389,9 +391,9 @@ new KeySequenceHandler([sequence1,sequence2]);
   });
 
   $(search_form).submit(function( event ) {
-    if ('ass' === $( "input" ).val()) {
-      createAss();
-    } else if ( 'help' === $( "input" ).val() || 'keyword2' === $( "input" ).val() || 'keyword3' === $( "input" ).val() || 'keyword4' === $( "input" ).val() || 'keyword5'  === $( "input" ).val()) {
+    if ('admin' === $( "input" ).val()) {
+      createAdmin();
+    } else if ( 'help' === $( "input" ).val() || 'instructions' === $( "input" ).val() || 'keyword3' === $( "input" ).val() || 'keyword4' === $( "input" ).val() || 'keyword5'  === $( "input" ).val()) {
       createHome();
     } else if ( $( "input" ).val() === "about" ) {
       window.open('http://eveassistant.com/home',"_self");
