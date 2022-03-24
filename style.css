@@ -286,7 +286,7 @@ span.navy{
 	width: 200ch;
 }
 .js .search--open .terminal__line:first-child {
-	width: 20ch;
+	width: 200ch;
 }
 .js .search--open .terminal__line:nth-child(2),
 .js .search--open .terminal__line:nth-child(3) {
