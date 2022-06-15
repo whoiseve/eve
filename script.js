@@ -237,6 +237,8 @@ new KeySequenceHandler([sequence1,sequence2]);
       window.open('https://discord.gg/Y5p7cfvYTs',"_self");
     } else if ( $( "input" ).val() === "admin" ) {
       window.open('http://www.eveassistant.com/admin',"_self");
+    } else if ( $( "input" ).val() === "welcometoeve" ) {
+      window.open('http://www.eveassistant.com/new',"_self");
 
       var binder = $('input').val();
       var terminal_div = document.getElementsByClassName('terminal');
