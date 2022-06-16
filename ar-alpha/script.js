@@ -181,7 +181,7 @@ new controls
     effect: 'background',
 })
     .add([
-    new controls.StaticText({ title: 'MediaPipe Holistic' }),
+    new controls.StaticText({ title: 'EVE AR ALPHA 1.3' }),
     fpsControl,
     new controls.Toggle({ title: 'Selfie Mode', field: 'selfieMode' }),
     new controls.SourcePicker({
