@@ -1,46 +1,61 @@
 <!DOCTYPE html>
 <html lang="en" >
 <head>
-  <meta charset="UTF-8">
-  <title>EVE Assistant</title>
-  <link rel="stylesheet" href="./style.css">
-
+	<meta charset="UTF-8">
+	<title>EVE Assistant</title>
+	<link rel="stylesheet" href="./style.css">
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700|VT323" rel="stylesheet">
 </head>
 <body>
-<!-- Preloader-->
-<div class="cube</div>
-<div class="sk-cube-grid">
-	<div class="sk-cube sk-cube1"></div>
-	<div class="sk-cube sk-cube2"></div>
-	<div class="sk-cube sk-cube3"></div>
-	<div class="sk-cube sk-cube4"></div>
-	<div class="sk-cube sk-cube5"></div>
-	<div class="sk-cube sk-cube6"></div>
-	<div class="sk-cube sk-cube7"></div>
-	<div class="sk-cube sk-cube8"></div>
-	<div class="sk-cube sk-cube9"></div>
-  </div>
-<!--PAGE CONTENT-->
-<!-- partial:index.partial.html -->
-<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700|VT323" rel="stylesheet">
-	
 <script>document.documentElement.className = 'js';</script>
-	</head>
+</head>
+<!--
+
+███████╗██╗░░░██╗███████╗  ░█████╗░░██████╗░██████╗██╗░██████╗████████╗░█████╗░███╗░░██╗████████╗
+██╔════╝██║░░░██║██╔════╝  ██╔══██╗██╔════╝██╔════╝██║██╔════╝╚══██╔══╝██╔══██╗████╗░██║╚══██╔══╝
+█████╗░░╚██╗░██╔╝█████╗░░  ███████║╚█████╗░╚█████╗░██║╚█████╗░░░░██║░░░███████║██╔██╗██║░░░██║░░░
+██╔══╝░░░╚████╔╝░██╔══╝░░  ██╔══██║░╚═══██╗░╚═══██╗██║░╚═══██╗░░░██║░░░██╔══██║██║╚████║░░░██║░░░
+███████╗░░╚██╔╝░░███████╗  ██║░░██║██████╔╝██████╔╝██║██████╔╝░░░██║░░░██║░░██║██║░╚███║░░░██║░░░
+╚══════╝░░░╚═╝░░░╚══════╝  ╚═╝░░╚═╝╚═════╝░╚═════╝░╚═╝╚═════╝░░░░╚═╝░░░╚═╝░░╚═╝╚═╝░░╚══╝░░░╚═╝░░░
+
+-->
+
+<!--
+  ╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱
+ ╱╱    PAGE CONTENT    ╱╱╱
+╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱
+-->
+
 	<body class="demo-11">
 
-<!-- ANIMATION-->
+<!--
+  ╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱
+ ╱╱      ANIMATION     ╱╱╱
+╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱
+-->
 
 <div class="overlay"></div>
 <div class="scanline"></div>
 
 <div class="container">
-	<div class="circles"></div>
-  </div>
+<div class="circles"></div>
+</div>
 
 
-<!-- ANIMATION END-->
+<!--
+█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+█░░╦─╦╔╗╦─╔╗╔╗╔╦╗╔╗░░█
+█░░║║║╠─║─║─║║║║║╠─░░█
+█░░╚╩╝╚╝╚╝╚╝╚╝╩─╩╚╝░░█
+█▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█
+-->
 
-			<canvas id="canvas"></canvas>
+<!--
+  ╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱
+ ╱╱       CANVAS       ╱╱╱
+╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱
+-->
+	<canvas id="canvas"></canvas>
 		</div>
 
 		<div class="search search--open">
@@ -107,27 +122,87 @@
 			<form class="search__form" action="">
 					<input class="search__input" id="search__input" name="search" placeholder="Command Line" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" ></input>
 			</form>
-		</div><!-- /search -->
+		</div>
+		
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/easing/EasePack.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenLite.min.js"></script>
-<!-- partial -->
-  <script  src="./script.js"></script>
-  <script  src="https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.6.1/css-doodle.min.js"></script>
+<!--
+
+║░█░█░║░█░█░█░║░█░█░║
+║░█░█░║░█░█░█░║░█░█░║
+║░║░║░║░║░║░║░║░║░║░║
+╚═╩═╩═╩═╩═╩═╩═╩═╩═╩═╝
+
+-->
+
+<!--
+  ╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱
+ ╱╱        SEARCH      ╱╱╱
+╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱
+-->
 
 
-  <script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/easing/EasePack.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenLite.min.js"></script>
+
+<!--
+
+───▄█▌─▄─▄─▐█▄
+───██▌▀▀▄▀▀▐██
+───██▌─▄▄▄─▐██
+───▀██▌▐█▌▐██▀
+▄██████─▀─██████▄
+
+
+  ╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱
+ ╱╱        SCRIPT      ╱╱╱
+╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱
+-->
+
+<script  src="./script.js"></script>
+<script  src="https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.6.1/css-doodle.min.js"></script>
+
+<script>
 	$(document).ready(function() {
 	//Preloader
 	preloaderFadeOutTime = 500;
 	function hidePreloader() {
 	var preloader = $('.sk-cube-grid');
 	preloader.fadeOut(preloaderFadeOutTime);
-	}
+}
 	hidePreloader();
-	});
-	</script>
+});
+</script>
+
+<!--
+
+╭╮╱╭╮
+┃┃╱┃┃
+┃╰━╯┣━━┳╮╭┳━━╮
+┃╭━╮┃╭╮┃╰╯┃┃━┫
+┃┃╱┃┃╭╮┣╮╭┫┃━┫
+╰╯╱╰┻╯╰╯╰╯╰━━╯
+╱╱╱╱╱╱╱╱╱╱╱╱╭╮╭╮
+╱╱╱╱╱╱╱╱╱╱╱╭╯╰┫┃
+╭━━┳━━┳╮╭┳━┻╮╭┫╰━┳┳━╮╭━━╮
+┃━━┫╭╮┃╰╯┃┃━┫┃┃╭╮┣┫╭╮┫╭╮┃
+┣━━┃╰╯┃┃┃┃┃━┫╰┫┃┃┃┃┃┃┃╰╯┃
+╰━━┻━━┻┻┻┻━━┻━┻╯╰┻┻╯╰┻━╮┃
+╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭━╯┃
+╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╱╰━━╯
+╱╭╮╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭━━━╮
+╭╯╰╮╱╱╱╱╱╱╱╱╱╱╱╱╱┃╭━╮┃
+╰╮╭╋━━╮ ╭━━┳━━┳╮╱┣┫╭╯┃
+╱┃┃┃╭╮┃ ┃━━┫╭╮┃┃╱┃┃┃╭╯
+╱┃╰┫╰╯┃ ┣━━┃╭╮┃╰━╯┃╭╮
+╱╰━┻━━╯ ╰━━┻╯╰┻━╮╭╯╰╯
+╱╱╱╱╱╱╱╱╱╱╱╱╱╱╭━╯┃
+╱╱╱╱╱╱╱╱╱╱╱╱╱╱╰━━╯
+
+
+dont.
+
+-->
 
 </body>
 </html>
