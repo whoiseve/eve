@@ -81,7 +81,27 @@ body::after {
 .hdr-stats { display: flex; gap: 28px; }
 .hdr-stat { font-size: 9px; letter-spacing: 0.15em; color: rgba(209,209,209,0.22); }
 .hdr-stat span { color: rgba(248,117,0,0.5); }
+.hdr-logo a,
+.hdr-logo a:visited,
+.hdr-logo a:active {
+  color: rgba(209,209,209,0.32);
+  text-decoration: none;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
 
+.hdr-logo a b {
+  color: rgba(248,117,0,0.55);
+}
+
+.hdr-logo a:hover {
+  color: #f87500;
+  text-decoration: none;
+  text-shadow: 0 0 8px rgba(248,117,0,0.45);
+}
+
+.hdr-logo a:hover b {
+  color: #f87500;
+}
 /* HERO */
 .hero {
   flex-shrink: 0;
@@ -356,8 +376,8 @@ body::after {
   <header class="hdr">
     <div class="hdr-logo">
   <a href="https://holoriseindustries.com">
-    <b>HOLORISE</b> INDUSTRIES &nbsp;/&nbsp; TERMINAL ACCESS v4.1.7
-  </a>
+    <b>HOLORISE</b> INDUSTRIES</a> &nbsp;/&nbsp; TERMINAL ACCESS v4.1.7
+  
 </div>
     <div class="hdr-stats">
       <div class="hdr-stat">NODE <span>NX-09</span></div>
